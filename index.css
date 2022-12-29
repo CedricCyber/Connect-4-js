@@ -1,0 +1,281 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* For dark mode */
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} */
+
+/* Color Palate */
+
+/* text */
+.white-text {
+  color: white;
+}
+.purple-text {
+  color: #7945ff;
+}
+.dark-purple-text {
+  color: #5c2dd5;
+}
+
+/* background */
+.purple-background {
+  background-color: #7945ff;
+}
+.dark-purple-background {
+  background-color: #5c2dd5;
+}
+.pink-background {
+  background-color: #fd6687;
+}
+.yellow-background {
+  background-color: #ffce67;
+}
+.black-background {
+  background-color: black;
+}
+.white-background {
+  background-color: white;
+}
+
+/* Default Typography */
+
+body {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 72px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 31px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 26px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+/* Utility Classes */
+
+/* Flex Utility Classes */
+.flex {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.flex-grow {
+  flex-grow: 2;
+}
+.gap {
+  gap: 20px;
+}
+/* Margin Utility Classes */
+.edge-margins {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+/* Border Utility Classes */
+.border-radius {
+  border-radius: 30px;
+}
+/* Shadow Utility Class */
+.shadow {
+  box-shadow: 0px 10px black;
+}
+.shadow-hover {
+  box-shadow: 0px 10px black;
+}
+.shadow-hover:hover {
+  box-shadow: 0px 10px #7945ff;
+}
+.shadow-hover-dark {
+  box-shadow: 0px 10px black;
+}
+.shadow-hover-dark:hover {
+  box-shadow: 0px 10px #5c2dd5;
+}
+/* Border Class */
+.border {
+  border: solid 3.5px black;
+}
+
+.height {
+  height: 100vh;
+}
+/* Text Utility Class */
+.text-center {
+  text-align: center;
+}
+/* Position Utility Styles */
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
+.adj {
+  top: 250px;
+}
+/* Width Utility Style */
+.fullscreen {
+  width: 100vw;
+}
+.width-board {
+  width: 632px;
+}
+/* Default Component Styles */
+
+.logo {
+}
+.button {
+  width: 400px;
+  height: 72px;
+  border-radius: 20px;
+}
+.button-small {
+  width: 86px;
+  height: 39px;
+  border-radius: 20px;
+}
+.menu-difficulty {
+}
+.game-board-large {
+  margin-left: -632px;
+  position: relative;
+  bottom: 10px;
+  z-index: 2;
+}
+.game-board-small {
+}
+.card-rules {
+}
+.card-player-one {
+  width: 141px;
+  height: 160px;
+}
+.card-player-two {
+  width: 141px;
+  height: 160px;
+}
+.card-player-icon {
+  position: relative;
+  top: 35px;
+}
+.icon-player-vs-player {
+}
+.icon-player-vs-cpu {
+}
+.icon-cpu {
+}
+.icon-player-one {
+}
+.icon-player-two {
+}
+.icon-player {
+}
+.timer {
+}
+.position-tracker {
+  margin-top: 10px;
+}
+.chip-large-red {
+}
+.chip-large-yellow {
+}
+.chip-small-red {
+}
+.chip-small-yellow {
+}
+.footer {
+}
+.grid {
+  width: 617px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  bottom: 590px;
+  z-index: 3;
+}
+.grid div {
+  width: 88px;
+  height: 87.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffce67;
+  border: 1px black solid;
+  border-radius: 50%;
+}
+.grid div:hover {
+  opacity: 0.8;
+}
+/* home page styles */
+.home-page-card {
+  width: 480px;
+  height: 435px;
+  gap: 10px;
+}
+
+/* Page Layout, Containers, and Responsiveness */
+/* Width Utility Styles
+.player-cards-and-board-container {
+  width: 80vw;
+}
+@media only screen and (max-width: 1200px) {
+  .player-cards-and-board-container {
+    width: 90;
+  }
+} */

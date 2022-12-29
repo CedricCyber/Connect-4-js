@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    <title>Connect 4 Game</title>
+  </head>
+  <body class="dark-purple-background flex justify-center items-center height">
+    <div
+      class="flex-col items-center justify-evenly home-page-card purple-background border-radius border shadow"
+    >
+      <nav class="flex-col items-center gap">
+        <img src="./images/logo.svg" alt="logo" />
+        <div class="flex-col gap">
+          <button
+            class="yellow-background button border shadow-hover-dark"
+            onclick=""
+          >
+            <div class="flex justify-around">
+              <h3>PLAY VS PLAYER</h3>
+              <img src="./images/player-vs-player.svg" alt="pvp icon" />
+            </div>
+          </button>
+          <button
+            class="pink-background white-text button border shadow-hover-dark"
+            onclick=""
+          >
+            <div class="flex justify-around">
+              <h3>PLAY VS CPU</h3>
+              <img src="./images/player-vs-cpu.svg" alt="pvc icon" />
+            </div>
+          </button>
+          <button class="button border shadow-hover-dark" onclick="">
+            <h3>RULES</h3>
+          </button>
+        </div>
+
+        <!-- <ButtonFlexed
+            textProp="PLAY VS CPU"
+            classProp="pink-background white-text button border shadow-hover"
+            iconProp={<IconPlayerVsCpu />}
+            clickProp="/playervscpu"
+          ></ButtonFlexed>
+          <ButtonCentered
+            textProp="GAME RULES"
+            classProp="button flex border shadow-hover"
+            iconProp=""
+            clickProp="/rules"
+          ></ButtonCentered> -->
+      </nav>
+    </div>
+  </body>
+</html>
