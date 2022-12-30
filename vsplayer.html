@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    <title>Connect 4 Game VS Player</title>
+  </head>
+
+  <!-- <nav></nav>
+  <div>
+    if display < 800px card.classlist="small size styles" -->
+  <!-- <card></card>
+    <card></card>position relative (top 600px)
+    <game></game>
+  
+  </div> -->
+
+  <body class="purple-background">
+    <div class="flex-col items-center">
+      <div
+        id="gameboard-nav-container"
+        class="flex items-center justify-between board-width"
+      >
+        <button
+          class="button-small dark-purple-background white-text border-none"
+        >
+          <h4>MENU</h4>
+        </button>
+        <img src="./images/logo.svg" alt="logo" />
+        <button
+          class="button-small dark-purple-background white-text border-none"
+        >
+          <h4>RESTART</h4>
+        </button>
+      </div>
+      <div>PositionTracker</div>
+      <div>CardPlayerScore</div>
+      <div>
+        <img class="absolute x-50" src="./images/board-layer-white-large.svg" />
+      </div>
+      <img class="" src="./images/board-layer-black-large.svg" />
+      <div id="game-board" class="grid"></div>
+
+      <img src="./images/board-layer-black-small.svg" />
+      <img class="overlap" src="./images/board-layer-white-small.svg" />
+    </div>
+    <!-- <div
+    id="gameboard-container"
+    className="flex-col items-center relative adj"
+  >
+    <div
+      priority="true"
+      className="game-board-nav-container flex items-center justify-between width-board"
+    >
+      <ButtonSm
+        textProp="MENU"
+        classProp="button-small dark-purple-background white-text"
+        handleClick={gaba}
+      />
+      <Logo />
+      <ButtonSm
+        textProp="RESTART"
+        classProp="button-small dark-purple-background white-text"
+      />
+    </div>
+    <PositionTracker player1turn={player1turn} />
+    <div className="flex items-center justify-evenly fullscreen">
+      <CardPlayerScore
+        classProp="card-player-one white-background border-radius border shadow flex-col items-center justify-evenly"
+        playerProp={player1}
+      />
+      <div className="board-container">
+        <img className="" src={gameboardblacklayer} alt="black layer" />
+        <img
+          className="game-board-large"
+          src={gameboardwhitelayer}
+          alt="white layerw"
+        />
+      </div>
+      <CardPlayerScore
+        classProp="card-player-two white-background border-radius border shadow flex-col items-center justify-evenly"
+        playerProp={player2}
+      />
+    </div>
+    <Grid />
+  </div> -->
+  </body>
+</html>
