@@ -268,8 +268,10 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  bottom: 590px;
-  z-index: 20;
+  bottom: 586px;
+  background-color: #ffce67;
+  opacity: 90%;
+  z-index: 1;
 }
 .grid div {
   width: 88px;
@@ -278,6 +280,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  border: 1px solid black;
 }
 .grid div:hover {
   opacity: 0.8;
