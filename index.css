@@ -125,9 +125,16 @@ button:hover {
   margin-left: 15px;
   margin-right: 15px;
 }
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Border Utility Classes */
 .border-radius {
   border-radius: 30px;
+}
+.border-none {
+  border: none;
 }
 /* Shadow Utility Class */
 .shadow {
@@ -164,19 +171,34 @@ button:hover {
 .relative {
   position: relative;
 }
-
 .adj {
   top: 250px;
+}
+/* z-index Utility Styles */
+.z1 {
+  z-index: 1;
+}
+.z2 {
+  z-index: 2;
+}
+.z3 {
+  z-index: 3;
+}
+/* Transform Utility Styles */
+.overlap {
+  transform: translateY(-103%);
+}
+.x-50 {
+  transform: translateX(-50%);
 }
 /* Width Utility Style */
 .fullscreen {
   width: 100vw;
 }
-.width-board {
+.board-width {
   width: 632px;
 }
 /* Default Component Styles */
-
 .logo {
 }
 .button {
@@ -247,7 +269,7 @@ button:hover {
   flex-wrap: wrap;
   position: relative;
   bottom: 590px;
-  z-index: 3;
+  z-index: 20;
 }
 .grid div {
   width: 88px;
@@ -255,8 +277,6 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffce67;
-  border: 1px black solid;
   border-radius: 50%;
 }
 .grid div:hover {
