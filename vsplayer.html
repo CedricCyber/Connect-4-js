@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      defer
+    ></script>
     <script src="index.js" defer></script>
     <title>Connect 4 Game VS Player</title>
   </head>
@@ -39,11 +43,14 @@
       <div>PositionTracker</div>
       <div>CardPlayerScore</div>
       <div>
-        <img class="absolute x-50" src="./images/board-layer-white-large.svg" />
+        <img
+          class="absolute x-50 z2"
+          src="./images/board-layer-white-large.svg"
+        />
       </div>
       <img class="" src="./images/board-layer-black-large.svg" />
       <div id="game-board" class="grid relative z3"></div>
-      <div id="render-board"></div>
+      <div id="render-board" class="grid relative underlay z1"></div>
       <img src="./images/board-layer-black-small.svg" />
       <img class="overlap" src="./images/board-layer-white-small.svg" />
     </div>

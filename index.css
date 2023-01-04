@@ -175,6 +175,12 @@ button:hover {
   top: 250px;
 }
 /* z-index Utility Styles */
+.-z1 {
+  z-index: -1;
+}
+.z0 {
+  z-index: 0;
+}
 .z1 {
   z-index: 1;
 }
@@ -184,7 +190,13 @@ button:hover {
 .z3 {
   z-index: 3;
 }
+.z4 {
+  z-index: 4;
+}
 /* Transform Utility Styles */
+.underlay {
+  transform: translateY(-100%);
+}
 .overlap {
   transform: translateY(-103%);
 }
@@ -262,16 +274,15 @@ button:hover {
 }
 .footer {
 }
+
 .grid {
   width: 617px;
   height: 500px;
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  bottom: 586px;
-  background-color: #ffce67;
+  bottom: 582px;
   opacity: 90%;
-  z-index: 1;
 }
 .grid div {
   width: 88px;
@@ -280,7 +291,6 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 1px solid black;
 }
 .grid div:hover {
   opacity: 0.8;
@@ -302,3 +312,6 @@ button:hover {
     width: 90;
   }
 } */
+test {
+  z-index: -10;
+}
