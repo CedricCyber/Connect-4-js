@@ -53,7 +53,7 @@ function addChip() {
       gsap.from(renderBoxes[boxIndex], {
         duration: 0.9,
         ease: "bounce.out",
-        y: -300,
+        y: -600,
       })
     );
   } else if (
@@ -71,7 +71,7 @@ function addChip() {
       gsap.from(renderBoxes[boxIndex], {
         duration: 0.9,
         ease: "bounce.out",
-        y: -300,
+        y: -600,
       })
     );
   } else {
