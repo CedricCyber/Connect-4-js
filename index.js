@@ -34,9 +34,13 @@ function addChip() {
   if (
     player1Turn == true &&
     // peices on the bottom of board have a class of 'open-space' hard coded in HTML
-    (boxes[boxIndex].classList.contains("open-space") ||
+    ((boxes[boxIndex].classList.contains("open-space") &&
+      // !checks that spots haven't already been taken and prevents going in the same spot twice
+      !boxes[boxIndex].classList.contains("taken")) ||
       // spots that clicked will have taken added to their class list
-      boxes[boxIndex + 7].classList.contains("taken"))
+      // checked to see if the spot directy below is taken & makes sure current spot isn't taken
+      (boxes[boxIndex + 7].classList.contains("taken") &&
+        !boxes[boxIndex].classList.contains("taken")))
   ) {
     return (
       // changes player turn
@@ -45,18 +49,30 @@ function addChip() {
       // appends red chip svg inside div on render board grid underlay with the same index of the clicked div on the gameboard overlay
       renderBoxes[boxIndex].appendChild(redChipLarge[boxIndex]),
       // adds class of taken to clicked box on gameboard overlay
-      boxes[boxIndex].classList.add("taken")
+      boxes[boxIndex].classList.add("taken"),
+      gsap.from(renderBoxes[boxIndex], {
+        duration: 0.9,
+        ease: "bounce.out",
+        y: -300,
+      })
     );
   } else if (
     player2Turn == true &&
-    (boxes[boxIndex].classList.contains("open-space") ||
-      boxes[boxIndex + 7].classList.contains("taken"))
+    ((boxes[boxIndex].classList.contains("open-space") &&
+      !boxes[boxIndex].classList.contains("taken")) ||
+      (boxes[boxIndex + 7].classList.contains("taken") &&
+        !boxes[boxIndex].classList.contains("taken")))
   ) {
     return (
       (player1Turn = true),
       (player2Turn = false),
       renderBoxes[boxIndex].appendChild(yellowChipLarge[boxIndex]),
-      boxes[boxIndex].classList.add("taken")
+      boxes[boxIndex].classList.add("taken"),
+      gsap.from(renderBoxes[boxIndex], {
+        duration: 0.9,
+        ease: "bounce.out",
+        y: -300,
+      })
     );
   } else {
     // alert for illegal moves
