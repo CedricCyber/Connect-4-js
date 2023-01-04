@@ -30,15 +30,21 @@ console.log(redChipLarge[0]);
 function addChip() {
   // index of on click variable
   let boxIndex = event.target.index;
+  // conditional statement that controls where players can put game peices on the board.
   if (
     player1Turn == true &&
+    // peices on the bottom of board have a class of 'open-space' hard coded in HTML
     (boxes[boxIndex].classList.contains("open-space") ||
+      // spots that clicked will have taken added to their class list
       boxes[boxIndex + 7].classList.contains("taken"))
   ) {
     return (
+      // changes player turn
       (player1Turn = false),
       (player2Turn = true),
+      // appends red chip svg inside div on render board grid underlay with the same index of the clicked div on the gameboard overlay
       renderBoxes[boxIndex].appendChild(redChipLarge[boxIndex]),
+      // adds class of taken to clicked box on gameboard overlay
       boxes[boxIndex].classList.add("taken")
     );
   } else if (
@@ -53,6 +59,7 @@ function addChip() {
       boxes[boxIndex].classList.add("taken")
     );
   } else {
+    // alert for illegal moves
     return alert("Cant got here");
   }
 }
