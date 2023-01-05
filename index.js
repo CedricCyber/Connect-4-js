@@ -10,12 +10,15 @@ const renderBoard = document.getElementById("render-board");
 const renderBoxes = document.querySelectorAll("#render-board div");
 console.log(renderBoxes);
 // variables for game logic
+// tracking player turns
 let player1Turn = true;
 let player2Turn = false;
+// to hold 42 yellow and red chips
 let redChipLarge = [];
 let yellowChipLarge = [];
-// function to addChip to renderboard when gameboard is clicked
-// & adds game logic with conditional statements
+// to track index of placed chips
+let player1array = [];
+let player2array = [];
 // for loop to loop through grid cells
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener("click", addChip);
@@ -98,19 +101,50 @@ const winningIndexs = [
   [11, 18, 25, 32],
   [12, 19, 26, 33],
   [13, 20, 27, 34],
+  [2, 3, 4, 5],
+  [3, 4, 5, 6],
+  [9, 10, 11, 12],
+  [10, 11, 12, 13],
+  [16, 17, 18, 19],
+  [17, 18, 19, 20],
+  [23, 24, 25, 26],
+  [24, 25, 26, 27],
+  [30, 31, 32, 33],
+  [31, 32, 33, 34],
+  [37, 38, 39, 40],
+  [38, 39, 40, 41],
 ];
-
-function loopThroughWinningIndexs() {
+// checks if player1 or player2 selected indexs match winning indexs
+function checkWinner() {
   for (let i = 0; i < winningIndexs.length; i++) {
+    // loops over all arrays and grabs the first,second,third,&four number of each array
     const box1 = winningIndexs[i][0];
     const box2 = winningIndexs[i][1];
     const box3 = winningIndexs[i][2];
     const box4 = winningIndexs[i][3];
-    console.log(box1, box2, box3, box4);
+
+    if (
+      // checks if player1 selected indexs match winning indexs
+      player1array.includes(box1) &&
+      player1array.includes(box2) &&
+      player1array.includes(box3) &&
+      player1array.includes(box4)
+    ) {
+      alert("player 1 wins");
+    } else if (
+      player2array.includes(box1) &&
+      player2array.includes(box2) &&
+      player2array.includes(box3) &&
+      player2array.includes(box4)
+    ) {
+      alert("player 2 wins");
+    }
   }
 }
-loopThroughWinningIndexs();
-// places a chip on the board
+checkWinner();
+
+// places a chip on the board when grid cell is clicked
+// chips svg is then appended to the renderBoard which underlays the gameBoard
 function addChip() {
   // index of on click variable
   let boxIndex = event.target.index;
@@ -121,8 +155,8 @@ function addChip() {
     ((boxes[boxIndex].classList.contains("open-space") &&
       // !checks that spots haven't already been taken and prevents going in the same spot twice
       !boxes[boxIndex].classList.contains("taken")) ||
-      // spots that clicked will have taken added to their class list
-      // checked to see if the spot directy below is taken & makes sure current spot isn't taken
+      // clicked spaces will have taken added to their class list
+      // checked to see if the space directy below is taken & makes sure current spot isn't taken
       (boxes[boxIndex + 7].classList.contains("taken") &&
         !boxes[boxIndex].classList.contains("taken")))
   ) {
@@ -132,16 +166,18 @@ function addChip() {
       (player2Turn = true),
       // appends red chip svg inside div on render board grid underlay with the same index of the clicked div on the gameboard overlay
       renderBoxes[boxIndex].appendChild(redChipLarge[boxIndex]),
-      // adds class of taken to clicked box on gameboard overlay
+      // adds class of taken to clicked box on gameboard grid overlay
       boxes[boxIndex].classList.add("taken"),
-      boxes[boxIndex].classList.add("player1"),
+      // pushes clicked box index to player1array
+      player1array.push(boxIndex),
+      // gsap animation for chip bounce
       gsap.from(renderBoxes[boxIndex], {
         duration: 0.9,
         ease: "bounce.out",
         y: -600,
       }),
-      checkWinner(),
-      console.log(boxes[boxIndex].classList)
+      // checks for winner
+      checkWinner()
     );
   } else if (
     player2Turn == true &&
@@ -155,7 +191,7 @@ function addChip() {
       (player2Turn = false),
       renderBoxes[boxIndex].appendChild(yellowChipLarge[boxIndex]),
       boxes[boxIndex].classList.add("taken"),
-      boxes[boxIndex].classList.add("player2"),
+      player2array.push(boxIndex),
       gsap.from(renderBoxes[boxIndex], {
         duration: 0.9,
         ease: "bounce.out",
