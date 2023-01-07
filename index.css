@@ -152,11 +152,11 @@ button:hover {
 .shadow-hover-dark:hover {
   box-shadow: 0px 10px #5c2dd5;
 }
-/* Border Class */
+/* Border utility class */
 .border {
   border: solid 3.5px black;
 }
-
+/* height utility class */
 .height {
   height: 100vh;
 }
@@ -195,13 +195,11 @@ button:hover {
 }
 /* Transform Utility Styles */
 .underlay {
-  transform: translateY(-100%);
+  transform: translateY(10px);
 }
 .overlap {
-  transform: translateY(-103%);
 }
 .x-50 {
-  transform: translateX(-50%);
 }
 /* Width Utility Style */
 .fullscreen {
@@ -210,9 +208,7 @@ button:hover {
 .board-width {
   width: 632px;
 }
-/* Default Component Styles */
-.logo {
-}
+/* Specific class styles */
 .button {
   width: 400px;
   height: 72px;
@@ -225,8 +221,10 @@ button:hover {
 }
 .menu-difficulty {
 }
+.game-board-large-container {
+  margin-top: 3%;
+}
 .game-board-large {
-  margin-left: -632px;
   position: relative;
   bottom: 10px;
   z-index: 2;
@@ -235,6 +233,8 @@ button:hover {
 }
 .card-rules {
 }
+/* absolute position to make styling smaller sizes easier */
+
 .card-player-one {
   width: 141px;
   height: 160px;
@@ -274,16 +274,16 @@ button:hover {
 }
 .footer {
 }
-
+/* invisible grid overlay/underlay styles */
 .grid {
   width: 617px;
   height: 500px;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
-  bottom: 582px;
-  opacity: 90%;
+  position: absolute;
+  transform: translateY(10px);
 }
+/* grid cells styles */
 .grid div {
   width: 88px;
   height: 87.8px;
@@ -313,5 +313,4 @@ button:hover {
   }
 } */
 test {
-  z-index: -10;
 }

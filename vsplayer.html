@@ -23,7 +23,7 @@
   </div> -->
 
   <body class="purple-background">
-    <div class="flex-col items-center">
+    <div class="flex-col items-center game-board-large-container">
       <div
         id="gameboard-nav-container"
         class="flex items-center justify-between board-width"
@@ -41,106 +41,153 @@
         </button>
       </div>
       <div>PositionTracker</div>
-      <div>CardPlayerScore</div>
-      <div>
-        <img
-          class="absolute x-50 z2"
-          src="./images/board-layer-white-large.svg"
-        />
+      <!-- surround player score cards, gameboard, and grids -->
+      <div id="score-card-board-container" class="">
+        <!-- surrounds player 1 and player 2 score cards -->
+        <div class="">
+
+          <!-- player one score card -->
+          <div id="card-player-one" class="items-center">
+            <!-- player one icon -->
+            <img
+            class="card-player-icon"
+            src="./images/player-one.svg"
+            alt="Player Icon"
+            />
+            
+            <div
+            class="card-player-one white-background border-radius border shadow flex-col items-center justify-evenly"
+            >
+            <div class="text-center">
+              <p>Player 1 Score</p>
+              <p id="player1Score">20 Points</p>
+              
+            </div>
+          </div>
+        <!-- player two score card -->
+        <div id="card-player-two" class="flex-col items-center">
+          <!-- player two icon -->
+          <img
+          class="card-player-icon"
+          src="./images/player-two.svg"
+          alt="Player Icon"
+          />
+          
+          <div
+          class="card-player-one white-background border-radius border shadow flex-col items-center justify-evenly"
+          >
+          <div class="text-center">
+            <p>Player 2 Score</p>
+            <p id="player2Score">20 Points</p>
+            
+          </div>
+        </div>
       </div>
-      <img class="" src="./images/board-layer-black-large.svg" />
-      <!-- invisable overlay grid -->
-      <div id="game-board" class="grid relative z3">
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class="open-space"></div>
-        <div class="open-space"></div>
-        <div class="open-space"></div>
-        <div class="open-space"></div>
-        <div class="open-space"></div>
-        <div class="open-space"></div>
-        <div class="open-space"></div>
+        <!-- surrounds game board and grids -->
+        <div id="board-and-grid-container" class=" items-center">
+          <!-- white gameboard layer -->
+          <div>
+            <img
+              class="absolute x-50 z2"
+              src="./images/board-layer-white-large.svg"
+            />
+          </div>
+          <!-- black gameboard layer -->
+          <img class="" src="./images/board-layer-black-large.svg" />
+          <!-- invisable overlay grid -->
+          <div id="game-board" class="grid absolute z3">
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class="open-space"></div>
+            <div class="open-space"></div>
+            <div class="open-space"></div>
+            <div class="open-space"></div>
+            <div class="open-space"></div>
+            <div class="open-space"></div>
+            <div class="open-space"></div>
+          </div>
+          <!-- invisable underlay grid -->
+          <div id="render-board" class="grid absolute underlay z1">
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+          </div>
+          <img src="./images/board-layer-black-small.svg" />
+          <img class="overlap" src="./images/board-layer-white-small.svg" />
+        </div>
       </div>
-      <!-- invisable underlay grid -->
-      <div id="render-board" class="grid relative underlay z1">
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-      </div>
-      <img src="./images/board-layer-black-small.svg" />
-      <img class="overlap" src="./images/board-layer-white-small.svg" />
     </div>
     <!-- <div
     id="gameboard-container"
