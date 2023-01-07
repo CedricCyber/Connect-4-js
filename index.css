@@ -200,6 +200,7 @@ button:hover {
 .overlap {
 }
 .x-50 {
+  transform: translateX(32.5%);
 }
 /* Width Utility Style */
 .fullscreen {
