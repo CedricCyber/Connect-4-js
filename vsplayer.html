@@ -23,7 +23,7 @@
   </div> -->
 
   <body class="purple-background">
-    <div class="items-center game-board-large-container">
+    <div class="items-center game-container">
       <div
         id="gameboard-nav-container"
         class="flex items-center justify-between board-width margin-auto"
@@ -43,7 +43,9 @@
       <!-- surround player score cards, gameboard, and grids -->
       <div id="score-card-board-container" class="">
         <!-- surrounds player 1 and player 2 score cards -->
-        <div class="flex justify-between yellow-background">
+        <div
+          class="flex justify-between player-score-cards-container margin-auto"
+        >
           <!-- player one score card -->
           <div id="card-player-one" class="flex-col items-center">
             <!-- player one icon -->
@@ -82,7 +84,7 @@
           </div>
         </div>
         <!-- surrounds game board and grids -->
-        <div id="board-and-grid-container" class="x-50">
+        <div id="board-and-grid-container" class="x-50 board-width margin-auto">
           <!-- white gameboard layer -->
           <div>
             <img
