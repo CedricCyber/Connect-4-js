@@ -168,6 +168,13 @@ button:hover {
 .absolute {
   position: absolute;
 }
+.absolute-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 .relative {
   position: relative;
 }
@@ -198,11 +205,6 @@ button:hover {
   transform: translateY(10px);
 }
 .overlap {
-}
-.x-50 {
-  left: 0;
-  right: 0;
-  position: absolute;
 }
 /* Width Utility Style */
 .fullscreen {
@@ -241,7 +243,14 @@ button:hover {
 .player-score-cards-container {
   width: 80vw;
   margin-bottom: -160px;
+  transform: translateY(85%);
 }
+@media screen and (max-width: 1250px) {
+  .player-score-cards-container {
+    width: 90vw;
+  }
+}
+
 .card-player-one {
   width: 141px;
   height: 160px;
@@ -267,6 +276,13 @@ button:hover {
 .icon-player {
 }
 .timer {
+  margin-top: -50px;
+}
+.timer-text {
+  margin-top: -130px;
+}
+.timer-time {
+  margin-top: -20px;
 }
 .position-tracker {
   margin-top: 10px;
