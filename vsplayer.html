@@ -84,7 +84,7 @@
           </div>
         </div>
         <!-- surrounds game board and grids -->
-        <div id="board-and-grid-container" class="x-50 board-width margin-auto">
+        <div id="board-and-grid-container" class="board-width margin-auto">
           <!-- white gameboard layer -->
           <div>
             <img
@@ -184,8 +184,26 @@
             <div class=""></div>
             <div class=""></div>
           </div>
-          <img src="./images/board-layer-black-small.svg" />
-          <img class="overlap" src="./images/board-layer-white-small.svg" />
+          <!-- Timer/ Turn Tracker / display winner -->
+          <div id="timer-container" class="board-width flex justify-center">
+            <div>
+              <img
+                id="timer"
+                class="timer relative z2"
+                src="./images/turn-background-red.svg"
+              />
+              <h3
+                id="timer-player-turn"
+                class="white-text text-center timer-text relative z3"
+              ></h3>
+              <h1
+                id="timer-seconds"
+                class="white-text text-center timer-time relative z3"
+              ></h1>
+            </div>
+          </div>
+          <!-- <img src="./images/board-layer-black-small.svg" />
+            <img class="overlap" src="./images/board-layer-white-small.svg" /> -->
         </div>
       </div>
     </div>
