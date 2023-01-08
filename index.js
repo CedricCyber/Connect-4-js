@@ -1,4 +1,5 @@
-// DOM Elements
+// DOM Elements --------------------
+// gameBoard DOM elements --------------------
 // gameBoard is an invisable grid that overlays the gameboard svg
 const gameBoard = document.getElementById("game-board");
 // gameBoard grid cells
@@ -9,7 +10,17 @@ const renderBoard = document.getElementById("render-board");
 // renderBoard grid cells
 const renderBoxes = document.querySelectorAll("#render-board div");
 console.log(renderBoxes);
-// variables for game logic
+// timer DOM elements --------------------
+// timer background svg
+const timer = document.getElementById("timer");
+// timer seconds text
+const timerSeconds = document.getElementById("timer-seconds");
+// initialize timerSeconds to 30
+timerSeconds.innerHTML = 30;
+// timer player turn text
+const timerPlayerTurn = document.getElementById("timer-player-turn");
+
+// variables for game logic --------------------
 // tracking player turns
 let player1Turn = true;
 let player2Turn = false;
@@ -19,9 +30,41 @@ let yellowChipLarge = [];
 // to track index of placed chips
 let player1array = [];
 let player2array = [];
+let intialTime = setInterval(updateTimer, 1000);
+
+// Logic for game timer --------------------
+function updateTimer() {
+  // display current player turn
+  if (player1Turn == true) {
+    timerPlayerTurn.innerHTML = "Player 1 Turn";
+  } else if (player2Turn == true) {
+    timerPlayerTurn.innerHTML = "Player 2 Turn";
+  }
+  // count down form 30 seconds
+  // if timerSeconds is greater than 0, count down
+  if (timerSeconds.innerHTML > 0) {
+    // count down timerSeconds
+    timerSeconds.innerHTML--;
+    // if timerSeconds hits 0, switch player turn
+  } else if (timerSeconds.innerHTML == 0) {
+    // switch player turn
+    if (player1Turn == true) {
+      player1Turn = false;
+      player2Turn = true;
+    } else if (player2Turn == true) {
+      player1Turn = true;
+      player2Turn = false;
+    }
+    // reset timerSeconds to 30
+    timerSeconds.innerHTML = 30;
+  }
+}
+
 // for loop to loop through grid cells
 for (let i = 0; i < boxes.length; i++) {
+  // add event listener to each grid cell
   boxes[i].addEventListener("click", addChip);
+  // add index to each grid cell
   boxes[i].index = i;
   // created 42 red and yellow chips in an array to append to renderBoard when gameBoard is clicked
   redChipLarge.push(document.createElement("img"));
@@ -30,7 +73,7 @@ for (let i = 0; i < boxes.length; i++) {
   yellowChipLarge[i].src = "./images/counter-yellow-large.svg";
 }
 
-// winning arrays looped through using for loop
+// arrays of winning indexs
 const winningIndexs = [
   [0, 1, 2, 3],
   [41, 40, 39, 38],
@@ -114,6 +157,8 @@ const winningIndexs = [
   [37, 38, 39, 40],
   [38, 39, 40, 41],
 ];
+
+// Game logic --------------------
 // checks if player1 or player2 selected indexs match winning indexs
 function checkWinner() {
   for (let i = 0; i < winningIndexs.length; i++) {
@@ -141,7 +186,6 @@ function checkWinner() {
     }
   }
 }
-checkWinner();
 
 // places a chip on the board when grid cell is clicked
 // chips svg is then appended to the renderBoard which underlays the gameBoard
@@ -177,7 +221,8 @@ function addChip() {
         y: -600,
       }),
       // checks for winner
-      checkWinner()
+      checkWinner(),
+      (timerSeconds.innerHTML = 30)
     );
   } else if (
     player2Turn == true &&
@@ -197,7 +242,9 @@ function addChip() {
         ease: "bounce.out",
         y: -600,
       }),
-      checkWinner()
+      checkWinner(),
+      // reset timer
+      (timerSeconds.innerHTML = 30)
     );
   } else {
     // alert for illegal moves
