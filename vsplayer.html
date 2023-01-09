@@ -13,15 +13,6 @@
     <title>Connect 4 Game VS Player</title>
   </head>
 
-  <!-- <nav></nav>
-  <div>
-    if display < 800px card.classlist="small size styles" -->
-  <!-- <card></card>
-    <card></card>position relative (top 600px)
-    <game></game>
-  
-  </div> -->
-
   <body class="purple-background">
     <div class="items-center game-container">
       <div
@@ -56,11 +47,12 @@
             />
 
             <div
-              class="card-player-one white-background border-radius border shadow flex-col items-center justify-evenly"
+              class="card-player-one white-background border-radius border shadow text-center flex-col justify-center"
             >
-              <div class="text-center">
-                <p>Player 1 Score</p>
-                <p id="player1Score">20 Points</p>
+              <div>
+                <h3>Player 1</h3>
+                <!-- displays player one score using js -->
+                <h2 class="" id="player1-score">0</h2>
               </div>
             </div>
           </div>
@@ -74,11 +66,11 @@
             />
 
             <div
-              class="card-player-one white-background border-radius border shadow flex-col items-center justify-evenly"
+              class="card-player-one white-background border-radius border shadow flex-col items-center text-center justify-evenly"
             >
-              <div class="text-center">
-                <p>Player 2 Score</p>
-                <p id="player2Score">20 Points</p>
+              <div>
+                <h3>Player 2</h3>
+                <h2 id="player2-score">0</h2>
               </div>
             </div>
           </div>
@@ -207,45 +199,5 @@
         </div>
       </div>
     </div>
-    <!-- <div
-    id="gameboard-container"
-    className="flex-col items-center relative adj"
-  >
-    <div
-      priority="true"
-      className="game-board-nav-container flex items-center justify-between width-board"
-    >
-      <ButtonSm
-        textProp="MENU"
-        classProp="button-small dark-purple-background white-text"
-        handleClick={gaba}
-      />
-      <Logo />
-      <ButtonSm
-        textProp="RESTART"
-        classProp="button-small dark-purple-background white-text"
-      />
-    </div>
-    <PositionTracker player1turn={player1turn} />
-    <div className="flex items-center justify-evenly fullscreen">
-      <CardPlayerScore
-        classProp="card-player-one white-background border-radius border shadow flex-col items-center justify-evenly"
-        playerProp={player1}
-      />
-      <div className="board-container">
-        <img className="" src={gameboardblacklayer} alt="black layer" />
-        <img
-          className="game-board-large"
-          src={gameboardwhitelayer}
-          alt="white layerw"
-        />
-      </div>
-      <CardPlayerScore
-        classProp="card-player-two white-background border-radius border shadow flex-col items-center justify-evenly"
-        playerProp={player2}
-      />
-    </div>
-    <Grid />
-  </div> -->
   </body>
 </html>
