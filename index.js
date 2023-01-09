@@ -17,9 +17,12 @@ const timerSeconds = document.getElementById("timer-seconds");
 timerSeconds.innerHTML = 30;
 // timer player turn text
 const timerPlayerTurn = document.getElementById("timer-player-turn");
+// player score DOM elements --------------------
 const player1Score = document.getElementById("player1-score");
+// Initialize player1Score to 0
 player1Score.innerHTML = 0;
 const player2Score = document.getElementById("player2-score");
+// Initialize player2Score to 0
 player2Score.innerHTML = 0;
 // variables for game logic --------------------
 // tracking player turns
@@ -32,6 +35,7 @@ let player2Win = false;
 let redChipLarge = [];
 let yellowChipLarge = [];
 // to track index of placed chips
+// TODO-------Remove selected indexs from p1 & p2 arrays when reset button is clicked -----------!!!
 let player1array = [];
 let player2array = [];
 let intialTime = setInterval(updateTimer, 1000);
@@ -66,6 +70,7 @@ function updateTimer() {
   }
 }
 
+// Setting up grid cells for game --------------------
 // for loop to loop through grid cells
 for (let i = 0; i < boxes.length; i++) {
   // add event listener to each grid cell
@@ -184,18 +189,6 @@ function checkWinner() {
       alert("player 1 wins");
       player1Win = true;
       player1Score.innerHTML++;
-      // removes child nodes from renderBoard
-      const selectedBoxes = document.querySelectorAll(".taken");
-      for (let i = 0; i < selectedBoxes.length; i++) {
-        if ((player1Win = true)) {
-          // removes child nodes from renderBoxes;
-          let selctedBoxesIndex = selectedBoxes[i].index;
-          renderBoxes[selctedBoxesIndex].removeChild(
-            renderBoxes[selctedBoxesIndex].firstChild
-          );
-          // selectedBoxes[i].removeChild(selectedBoxes[i].childNodes[0]);
-        }
-      }
     } else if (
       player2array.includes(box1) &&
       player2array.includes(box2) &&
@@ -243,8 +236,7 @@ function addChip() {
       }),
       // checks for winner
       checkWinner(),
-      (timerSeconds.innerHTML = 30),
-      console.log(renderBoard.firstChild)
+      (timerSeconds.innerHTML = 30)
     );
   } else if (
     player2Turn == true &&
@@ -273,3 +265,45 @@ function addChip() {
     return alert("Cant got here");
   }
 }
+
+const restartButton = document.getElementById("restart-button");
+// Remove Chips from render board ------------------
+console.log(restartButton);
+// removes chips and classes from renderBoard
+// resets player turn and timer
+let resetBoard = () => {
+  const selectedBoxes = document.querySelectorAll(".taken");
+  // rest player turn to 1
+  player1Turn = true;
+  player2Turn = false;
+  // reset timer
+  timerSeconds.innerHTML = 30;
+  for (let i = 0; i < selectedBoxes.length; i++) {
+    // index of selectedBoxes to match renderBoxes
+    let selectedBoxesIndex = selectedBoxes[i].index;
+    // removes child svgs from renderBoxes;
+    renderBoxes[selectedBoxesIndex].removeChild(
+      renderBoxes[selectedBoxesIndex].firstChild
+    ),
+      // remove taken class from selected elements
+      selectedBoxes[i].classList.remove("taken");
+  }
+};
+// let sum = 0;
+// for (var i = 0; i < 5; i++) {
+//   console.log(i);
+//   sum += i;
+// }
+// return sum;
+
+// for (let i = 0; i < 5; i++) {
+//   return console.log(i);
+// }
+
+// return (
+//   // removes taken class from boxes
+//   boxes.forEach((box) => box.classList.remove("taken"))
+// );
+
+// add onclick to restart button to remove chips from renderBoard
+restartButton.addEventListener("click", resetBoard);
