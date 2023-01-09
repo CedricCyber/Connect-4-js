@@ -133,9 +133,7 @@ button:hover {
 .border-radius {
   border-radius: 30px;
 }
-.border-none {
-  border: none;
-}
+
 /* Shadow Utility Class */
 .shadow {
   box-shadow: 0px 10px black;
@@ -177,9 +175,6 @@ button:hover {
 }
 .relative {
   position: relative;
-}
-.adj {
-  top: 250px;
 }
 /* z-index Utility Styles */
 .-z1 {
