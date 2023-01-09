@@ -4,12 +4,10 @@
 const gameBoard = document.getElementById("game-board");
 // gameBoard grid cells
 const boxes = document.querySelectorAll("#game-board div");
-console.log(boxes);
 // renderBoard is an invisable grid that underlays the actual game board svg
 const renderBoard = document.getElementById("render-board");
 // renderBoard grid cells
 const renderBoxes = document.querySelectorAll("#render-board div");
-console.log(renderBoxes);
 // timer DOM elements --------------------
 // timer background svg
 const timer = document.getElementById("timer");
@@ -19,11 +17,17 @@ const timerSeconds = document.getElementById("timer-seconds");
 timerSeconds.innerHTML = 30;
 // timer player turn text
 const timerPlayerTurn = document.getElementById("timer-player-turn");
-
+const player1Score = document.getElementById("player1-score");
+player1Score.innerHTML = 0;
+const player2Score = document.getElementById("player2-score");
+player2Score.innerHTML = 0;
 // variables for game logic --------------------
 // tracking player turns
 let player1Turn = true;
 let player2Turn = false;
+// tacking player win
+let player1Win = false;
+let player2Win = false;
 // to hold 42 yellow and red chips
 let redChipLarge = [];
 let yellowChipLarge = [];
@@ -37,8 +41,10 @@ function updateTimer() {
   // display current player turn
   if (player1Turn == true) {
     timerPlayerTurn.innerHTML = "Player 1 Turn";
+    timer.src = "./images/turn-background-red.svg";
   } else if (player2Turn == true) {
     timerPlayerTurn.innerHTML = "Player 2 Turn";
+    timer.src = "./images/turn-background-yellow.svg";
   }
   // count down form 30 seconds
   // if timerSeconds is greater than 0, count down
@@ -176,6 +182,20 @@ function checkWinner() {
       player1array.includes(box4)
     ) {
       alert("player 1 wins");
+      player1Win = true;
+      player1Score.innerHTML++;
+      // removes child nodes from renderBoard
+      const selectedBoxes = document.querySelectorAll(".taken");
+      for (let i = 0; i < selectedBoxes.length; i++) {
+        if ((player1Win = true)) {
+          // removes child nodes from renderBoxes;
+          let selctedBoxesIndex = selectedBoxes[i].index;
+          renderBoxes[selctedBoxesIndex].removeChild(
+            renderBoxes[selctedBoxesIndex].firstChild
+          );
+          // selectedBoxes[i].removeChild(selectedBoxes[i].childNodes[0]);
+        }
+      }
     } else if (
       player2array.includes(box1) &&
       player2array.includes(box2) &&
@@ -183,6 +203,7 @@ function checkWinner() {
       player2array.includes(box4)
     ) {
       alert("player 2 wins");
+      player2Score.innerHTML++;
     }
   }
 }
@@ -222,7 +243,8 @@ function addChip() {
       }),
       // checks for winner
       checkWinner(),
-      (timerSeconds.innerHTML = 30)
+      (timerSeconds.innerHTML = 30),
+      console.log(renderBoard.firstChild)
     );
   } else if (
     player2Turn == true &&
