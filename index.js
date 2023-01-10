@@ -186,9 +186,20 @@ function checkWinner() {
       player1array.includes(box3) &&
       player1array.includes(box4)
     ) {
+      // if player1 selected indexs match winning indexs, alert player1 wins
       alert("player 1 wins");
+      // sets player1Win to true for conditional statement
       player1Win = true;
+      // adds 1 point to player1 score
       player1Score.innerHTML++;
+      // pause timer
+      clearInterval(initialTime);
+      // stops player from adding chips to the board
+      if (player1Win == true) {
+        boxes.forEach((box) => {
+          box.removeEventListener("click", addChip);
+        });
+      }
     } else if (
       player2array.includes(box1) &&
       player2array.includes(box2) &&
@@ -196,7 +207,14 @@ function checkWinner() {
       player2array.includes(box4)
     ) {
       alert("player 2 wins");
+      player2Win = true;
       player2Score.innerHTML++;
+      clearInterval(initialTime);
+      if (player2Win == true) {
+        boxes.forEach((box) => {
+          box.removeEventListener("click", addChip);
+        });
+      }
     }
   }
 }
@@ -279,6 +297,15 @@ let resetBoard = () => {
   // rest player turn to 1
   player1Turn = true;
   player2Turn = false;
+  // reset wins and restore addChip event listener if a player has won
+  if (player1Win == true || player2Win == true) {
+    player1Win = false;
+    player2Win = false;
+    boxes.forEach((box) => {
+      box.addEventListener("click", addChip);
+    });
+    initialTime = setInterval(updateTimer, 1000);
+  }
   // reset timer
   timerSeconds.innerHTML = 30;
   for (let i = 0; i < selectedBoxes.length; i++) {
