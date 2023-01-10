@@ -354,17 +354,34 @@ const gameBoardWhiteLayer = document.getElementById("game-board-white-layer");
 const gameBoardBlackLayer = document.getElementById("game-board-black-layer");
 
 // grab current screen size
-let currentScreenSize = window.innerWidth;
-// when currentScreenSize changes run function
-window.addEventListener("resize", () => {
+
+// function to check to change board to mobile view
+function mobileView() {
+  let currentScreenSize = window.innerWidth;
   // when currentScreenSize is less than 970px change gameBoardWhiteLayer and gameBoardBlackLayer to smaller images
   if (currentScreenSize < 970) {
     gameBoardWhiteLayer.src = "images/board-layer-white-small.svg";
     gameBoardBlackLayer.src = "images/board-layer-black-small.svg";
+    redChipLarge.forEach((chip) => {
+      chip.src = "images/counter-red-small.svg";
+    });
+    yellowChipLarge.forEach((chip) => {
+      chip.src = "images/counter-yellow-small.svg";
+    });
   }
   // when currentScreenSize is greater than 970px change gameBoardWhiteLayer and gameBoardBlackLayer to larger images
   else if (currentScreenSize > 970) {
     gameBoardWhiteLayer.src = "images/board-layer-white-large.svg";
     gameBoardBlackLayer.src = "images/board-layer-black-large.svg";
+    redChipLarge.forEach((chip) => {
+      chip.src = "images/counter-red-large.svg";
+    });
+    yellowChipLarge.forEach((chip) => {
+      chip.src = "images/counter-yellow-large.svg";
+    });
   }
-});
+}
+// run function on load
+mobileView();
+// when currentScreenSize changes run function
+window.addEventListener("resize", mobileView);
