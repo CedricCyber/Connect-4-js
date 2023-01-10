@@ -13,13 +13,14 @@
     <title>Connect 4 Game VS Player</title>
   </head>
 
-  <body class="purple-background">
-    <div class="items-center game-container">
+  <body id="body" class="purple-background">
+    <div id="game-container" class="items-center game-container">
       <div
         id="gameboard-nav-container"
         class="flex items-center justify-between board-width margin-auto"
       >
         <button
+          id="menu-button"
           class="button-small dark-purple-background white-text border-none"
         >
           <h4>MENU</h4>
@@ -198,6 +199,32 @@
           <!-- <img src="./images/board-layer-black-small.svg" />
             <img class="overlap" src="./images/board-layer-white-small.svg" /> -->
         </div>
+      </div>
+    </div>
+    <!-- Menu (appears on click) -->
+    <div
+      id="game-menu"
+      class="margin-auto game-menu purple-background z4 border-radius border shadow flex-col justify-center display-none"
+    >
+      <div class="flex-col gap items-center">
+        <h1 class="white-text">PAUSE</h1>
+
+        <button
+          id="continue-game-button"
+          class="button border shadow-hover-dark"
+        >
+          <h3>CONTINUE GAME</h3>
+        </button>
+        <a href="vsplayer.html">
+          <button class="button border shadow-hover-dark">
+            <h3>RESTART</h3>
+          </button>
+        </a>
+        <a href="index.html">
+          <button class="button border shadow-hover-dark pink-background">
+            <h3 class="white-text">QUIT GAME</h3>
+          </button>
+        </a>
       </div>
     </div>
   </body>
