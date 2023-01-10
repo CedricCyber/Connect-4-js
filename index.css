@@ -83,6 +83,10 @@ h4 {
   line-height: 21px;
   margin: 0;
 }
+li {
+  font-size: 16px;
+  line-height: 21px;
+}
 button:hover {
   cursor: pointer;
 }
@@ -238,6 +242,12 @@ button:hover {
 .game-board-small {
 }
 .card-rules {
+  width: 480px;
+  height: 669px;
+  margin-top: 60px;
+}
+.card-rules {
+  font-weight: 500;
 }
 /* absolute position to make styling smaller sizes easier */
 .player-score-cards-container {
@@ -330,6 +340,19 @@ button:hover {
   height: 491px;
   margin-top: -690px;
   position: relative;
+}
+.rule-list li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* remove number bullets from list */
+.rule-list li {
+  list-style-type: none;
+}
+.rule-list span {
+  font-weight: bold;
+  margin-left: -38px;
+  margin-right: 15px;
 }
 /* Page Layout, Containers, and Responsiveness */
 /* Width Utility Styles
