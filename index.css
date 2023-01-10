@@ -176,13 +176,20 @@ button:hover {
 .relative {
   position: relative;
 }
+/* Display Utility Styles */
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
+}
+/* Brightness Style */
+.brightness-dim {
+  filter: brightness(70%);
+}
+
 /* z-index Utility Styles */
-.-z1 {
-  z-index: -1;
-}
-.z0 {
-  z-index: 0;
-}
+
 .z1 {
   z-index: 1;
 }
@@ -198,8 +205,6 @@ button:hover {
 /* Transform Utility Styles */
 .underlay {
   transform: translateY(10px);
-}
-.overlap {
 }
 /* Width Utility Style */
 .fullscreen {
@@ -218,7 +223,7 @@ button:hover {
   border-radius: 20px;
 }
 .button-small {
-  width: 86px;
+  width: 100px;
   height: 39px;
   border-radius: 20px;
 }
@@ -320,7 +325,12 @@ button:hover {
   height: 435px;
   gap: 10px;
 }
-
+.game-menu {
+  width: 480px;
+  height: 491px;
+  margin-top: -690px;
+  position: relative;
+}
 /* Page Layout, Containers, and Responsiveness */
 /* Width Utility Styles
 .player-cards-and-board-container {
