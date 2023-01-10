@@ -317,6 +317,35 @@ button:hover {
   margin-top: -587px;
   transform: translateX(7.5px);
 }
+/* GameBoard and Grid */
+@media screen and (max-width: 970px) {
+  #game-board-white-layer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #game-board-black-layer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .grid {
+    width: 334px;
+    height: 280px;
+    margin-top: 4px;
+    transform: translateX(7.5px);
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 3px;
+  }
+}
+
 /* grid cells styles */
 .grid div {
   width: 88px;
@@ -325,6 +354,12 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+@media screen and (max-width: 970px) {
+  .grid div {
+    width: 43px;
+    height: 43px;
+  }
 }
 .grid div:hover {
   opacity: 0.8;
