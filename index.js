@@ -38,7 +38,7 @@ let yellowChipLarge = [];
 // TODO-------Remove selected indexs from p1 & p2 arrays when reset button is clicked -----------!!!
 let player1array = [];
 let player2array = [];
-let intialTime = setInterval(updateTimer, 1000);
+let initialTime = setInterval(updateTimer, 1000);
 
 // Logic for game timer --------------------
 function updateTimer() {
@@ -266,6 +266,9 @@ function addChip() {
   }
 }
 
+// Button Logic ------------------------>
+
+// Restart Button
 const restartButton = document.getElementById("restart-button");
 // Remove Chips from render board ------------------
 console.log(restartButton);
@@ -286,24 +289,33 @@ let resetBoard = () => {
       renderBoxes[selectedBoxesIndex].firstChild
     ),
       // remove taken class from selected elements
-      selectedBoxes[i].classList.remove("taken");
+      selectedBoxes[i].classList.remove("taken"),
+      (player1array = []),
+      (player2array = []);
   }
 };
-// let sum = 0;
-// for (var i = 0; i < 5; i++) {
-//   console.log(i);
-//   sum += i;
-// }
-// return sum;
-
-// for (let i = 0; i < 5; i++) {
-//   return console.log(i);
-// }
-
-// return (
-//   // removes taken class from boxes
-//   boxes.forEach((box) => box.classList.remove("taken"))
-// );
-
-// add onclick to restart button to remove chips from renderBoard
 restartButton.addEventListener("click", resetBoard);
+
+// Menu Button
+const menuButton = document.getElementById("menu-button");
+const gameMenu = document.getElementById("game-menu");
+const body = document.getElementById("body");
+const gameContainer = document.getElementById("game-container");
+// Menu Button Logic
+menuButton.addEventListener("click", () => {
+  gameMenu.classList.toggle("display-none"),
+    body.classList.toggle("dark-purple-background"),
+    gameContainer.classList.toggle("brightness-dim"),
+    // pause timer
+    clearInterval(initialTime);
+});
+
+// Continue Game Button
+const continueGameButton = document.getElementById("continue-game-button");
+continueGameButton.addEventListener("click", () => {
+  gameMenu.classList.toggle("display-none"),
+    body.classList.toggle("dark-purple-background"),
+    gameContainer.classList.toggle("brightness-dim"),
+    // resume timer
+    (initialTime = setInterval(updateTimer, 1000));
+});
