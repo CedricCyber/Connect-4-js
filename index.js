@@ -348,3 +348,23 @@ continueGameButton.addEventListener("click", () => {
     // resume timer
     (initialTime = setInterval(updateTimer, 1000));
 });
+
+// Mobile Game Logic ------------------------>
+const gameBoardWhiteLayer = document.getElementById("game-board-white-layer");
+const gameBoardBlackLayer = document.getElementById("game-board-black-layer");
+
+// grab current screen size
+let currentScreenSize = window.innerWidth;
+// when currentScreenSize changes run function
+window.addEventListener("resize", () => {
+  // when currentScreenSize is less than 970px change gameBoardWhiteLayer and gameBoardBlackLayer to smaller images
+  if (currentScreenSize < 970) {
+    gameBoardWhiteLayer.src = "images/board-layer-white-small.svg";
+    gameBoardBlackLayer.src = "images/board-layer-black-small.svg";
+  }
+  // when currentScreenSize is greater than 970px change gameBoardWhiteLayer and gameBoardBlackLayer to larger images
+  else if (currentScreenSize > 970) {
+    gameBoardWhiteLayer.src = "images/board-layer-white-large.svg";
+    gameBoardBlackLayer.src = "images/board-layer-black-large.svg";
+  }
+});
