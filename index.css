@@ -334,15 +334,17 @@ button:hover {
     margin-right: auto;
   }
   .grid {
-    width: 334px;
+    width: 335px;
     height: 280px;
     margin-top: 4px;
-    transform: translateX(7.5px);
+    /* translate x and y 5px */
+    transform: translate(6.2px, 2px);
+
     right: 0;
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    gap: 3px;
+    gap: 3.5px;
   }
 }
 
