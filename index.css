@@ -265,6 +265,18 @@ button:hover {
     width: 95vw;
   }
 }
+@media screen and (max-width: 970px) {
+  .player-score-cards-container {
+    transform: translateY(30%);
+  }
+}
+@media screen and (max-width: 660px) {
+  .player-score-cards-container {
+    margin-bottom: 30px;
+    transform: translateY(0);
+    width: 335px;
+  }
+}
 
 .card-player-one {
   width: 141px;
@@ -361,11 +373,27 @@ button:hover {
   height: 435px;
   gap: 10px;
 }
+@media screen and (max-width: 970px) {
+  .home-page-card {
+    width: 335px;
+    height: 435px;
+  }
+}
 .game-menu {
   width: 480px;
   height: 491px;
   margin-top: -690px;
   position: relative;
+}
+@media screen and (max-width: 970px) {
+  .game-menu {
+    width: 335px;
+    height: 510px;
+  }
+  .button {
+    width: 295px;
+    height: 72px;
+  }
 }
 .rule-list li {
   margin-top: 10px;
