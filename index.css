@@ -217,6 +217,12 @@ button:hover {
 .board-width {
   width: 632px;
 }
+@media screen and (max-width: 768px) {
+  .board-width {
+    width: 335px;
+  }
+}
+
 /* Specific class styles */
 .game-container {
   margin-top: 3%;
@@ -231,6 +237,7 @@ button:hover {
   height: 39px;
   border-radius: 20px;
 }
+/* for vs cpu option */
 .menu-difficulty {
 }
 
@@ -238,8 +245,6 @@ button:hover {
   position: relative;
   bottom: 10px;
   z-index: 2;
-}
-.game-board-small {
 }
 .card-rules {
   width: 480px;
@@ -273,18 +278,6 @@ button:hover {
   position: relative;
   top: 35px;
 }
-.icon-player-vs-player {
-}
-.icon-player-vs-cpu {
-}
-.icon-cpu {
-}
-.icon-player-one {
-}
-.icon-player-two {
-}
-.icon-player {
-}
 .timer {
   margin-top: -50px;
 }
@@ -294,16 +287,12 @@ button:hover {
 .timer-time {
   margin-top: -20px;
 }
-.position-tracker {
-  margin-top: 10px;
-}
-.chip-large-red {
-}
-.chip-large-yellow {
-}
-.chip-small-red {
-}
-.chip-small-yellow {
+/* timer mobile styles */
+@media screen and (max-width: 970px) {
+  /* Moves timer to bottom of game board on mobile view */
+  .timer {
+    margin-top: 290px;
+  }
 }
 .footer {
 }
@@ -338,7 +327,7 @@ button:hover {
     height: 280px;
     margin-top: 4px;
     /* translate x and y 5px */
-    transform: translate(6.2px, 2px);
+    transform: translate(6.2px, 2.6px);
 
     right: 0;
     left: 0;
