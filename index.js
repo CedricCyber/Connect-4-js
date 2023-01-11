@@ -207,7 +207,6 @@ function checkWinner() {
       player2array.includes(box3) &&
       player2array.includes(box4)
     ) {
-      alert("player 2 wins");
       player2Win = true;
       player2Score.innerHTML++;
       clearInterval(initialTime);
