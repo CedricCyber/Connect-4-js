@@ -297,6 +297,7 @@ button:hover {
   /* Moves timer to bottom of game board on mobile view */
   .timer {
     margin-top: 290px;
+    margin-bottom: 40px;
   }
 }
 .footer {
@@ -398,6 +399,7 @@ button:hover {
   .card-rules {
     width: 335px;
     height: 880px;
+    margin-bottom: 40px;
   }
 }
 .rule-list li {
